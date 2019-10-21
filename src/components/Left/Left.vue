@@ -1,12 +1,10 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <div id="left"></div>
 </template>
 
 <script>
 export default {
-  name: "App",
+  name: "Left",
   components: {},
   props: {},
   data() {
@@ -22,6 +20,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import "./style/common";
-</style>
+<style scoped lang="scss"></style>
