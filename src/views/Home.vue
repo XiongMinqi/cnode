@@ -3,7 +3,7 @@
     <div class="top"><Top /></div>
     <div class="zhongjian">
       <div class="center">
-        <div class="left"><Left /></div>
+        <div class="left"><router-view></router-view></div>
         <div class="right"><Right /></div>
       </div>
     </div>
@@ -13,14 +13,12 @@
 
 <script>
 import Top from "../components/Top/Top";
-import Left from "../components/Left/Left";
 import Right from "../components/Right/Right";
 import Bottom from "../components/Bottom/Bottom";
 export default {
   name: "Home",
   components: {
     Top,
-    Left,
     Right,
     Bottom
   },

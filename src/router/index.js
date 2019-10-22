@@ -1,29 +1,46 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+import Index from "../views/Index.vue";
 
-Vue.use(VueRouter)
-Vue.use(ElementUI);
+
+
+Vue.use(VueRouter);
+
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: Home
+    path: "/",
+    redirect:"/index"
   },
   {
-    path:"/"
+    path: "/index",
+    component: Home,
+    children: [
+      {
+        path: "",
+        name:"index",
+        component: Index
+      }
+    ]
+  },
+  {
+    path: "/shuju",
+    component: Home,
+    children: [
+      {
+        path: "",
+        name:"shuju",
+        component: () => import("../components/Shuju/Shuju.vue")
+      }
+    ]
   },
 
-
-
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;

@@ -19,11 +19,11 @@
       >
         无人回复的话题
       </div>
-      <div><a href="">qsda </a></div>
-      <div><a href="">asda</a></div>
-      <div><a href="">dasd</a></div>
-      <div><a href="">adsa</a></div>
-      <div><a href="">asd</a></div>
+      <div><a href="">如何学习js </a></div>
+      <div><a href="">发现一个用node.js做的后台权限管理框架</a></div>
+      <div><a href="">请问有谁了解 VuePress JAMStack Headless cms么</a></div>
+      <div><a href="">RabbitMQ 消费端服务限流实践</a></div>
+      <div><a href="">Alfred 4 Workflow Open in VSCode</a></div>
     </div>
     <div class="forth">
       <div
@@ -34,16 +34,16 @@
       >
         积分榜 TOP 100 >>
       </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div>21725&nbsp;&nbsp;i5ting</div>
+      <div>15650&nbsp;&nbsp;alsotang</div>
+      <div>9350&nbsp;&nbsp;leapon</div>
+      <div>9030&nbsp;&nbsp;atian25</div>
+      <div>8780&nbsp;&nbsp;jiyinyiyong</div>
+      <div>7305&nbsp;&nbsp;yakczh</div>
+      <div>6815&nbsp;&nbsp;im-here</div>
+      <div>6095&nbsp;&nbsp;DevinXian</div>
+      <div>5815&nbsp;&nbsp;chapgaga</div>
+      <div>5350&nbsp;&nbsp;magicdawn</div>
     </div>
     <div class="fixth">
       <div
@@ -123,14 +123,22 @@ export default {
 .third {
   div {
     padding: 15px 15px 0 15px;
+    margin-bottom: 15px;
+  }
+  a {
+    color: black;
+    text-decoration: none;
   }
   padding-bottom: 15px;
   background: white;
   margin-bottom: 25px;
+  overflow: hidden;
 }
 .forth {
   div {
+    font-size: 17px;
     padding: 15px 15px 0 15px;
+    margin-bottom: 20px;
   }
   padding-bottom: 15px;
   background: white;

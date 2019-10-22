@@ -6,10 +6,6 @@
         <img src="../../assets/image/sousuo.svg" alt="" />
         <input type="text" />
       </div>
-      <!--      <div class="shurukuang el__input_radius">-->
-      <!--        <el-input placeholder="请输入内容" prefix-icon="el-icon-search">-->
-      <!--        </el-input>-->
-      <!--      </div>-->
     </div>
     <div class="right">
       <ul>
@@ -32,7 +28,14 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    // back(){
+    //
+    // },
+    // clickitem(){
+    //
+    // }
+  },
   mounted() {},
   created() {},
   filters: {},
@@ -75,10 +78,12 @@ export default {
     margin-top: 12px;
   }
   .shurukuang {
+    position: relative;
+    top: 10px;
     width: 350px;
     height: 45px;
     display: flex;
-    /*line-height: 68px;*/
+    line-height: 68px;
     background: white;
     border-radius: 20px;
     img {
@@ -88,7 +93,7 @@ export default {
     }
     input {
       margin-left: -22px;
-      width: 280px;
+      width: 300px;
       height: 43px;
       border: 0;
       border-radius: 20px;
