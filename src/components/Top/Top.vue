@@ -14,7 +14,7 @@
         <li>API</li>
         <li>关于</li>
         <li>注册</li>
-        <li>登录</li>
+        <li @click="login">登录</li>
       </ul>
     </div>
   </div>
@@ -35,6 +35,9 @@ export default {
     // clickitem(){
     //
     // }
+    login(){
+      this.$router.push('./Login')
+    }
   },
   mounted() {},
   created() {},

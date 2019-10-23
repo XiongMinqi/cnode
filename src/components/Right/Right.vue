@@ -2,8 +2,8 @@
   <div class="right-son">
     <div class="first">
       CNode：Node.js专业中文社区 <br /><br />
-      <span>您可以 <a href="">登录</a> 或 注册 , 也可以 </span><br /><br />
-      <el-button type="primary">登录</el-button>
+      <span>您可以 登录 或 注册 , 也可以 </span><br /><br />
+      <el-button type="primary" @click="login">登录</el-button>
     </div>
     <div class="second">
       <div><img src="../../assets/image/right-1.png" alt="" /></div>
@@ -84,7 +84,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    login(){
+      this.$router.push('./Login')
+    }
+  },
   mounted() {},
   created() {},
   filters: {},
@@ -125,10 +129,6 @@ export default {
     padding: 15px 15px 0 15px;
     margin-bottom: 15px;
   }
-  a {
-    color: black;
-    text-decoration: none;
-  }
   padding-bottom: 15px;
   background: white;
   margin-bottom: 25px;
@@ -167,4 +167,8 @@ export default {
   background: white;
   margin-bottom: 25px;
 }
+  a{
+    color: black;
+    text-decoration: none;
+  }
 </style>

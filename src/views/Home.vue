@@ -24,7 +24,9 @@ export default {
   },
   props: {},
   data() {
-    return {};
+    return {
+
+    };
   },
   methods: {},
   mounted() {},
@@ -42,9 +44,15 @@ export default {
   background: #444;
   height: 68px;
 }
+.left {
+  max-width: 1300px;
+}
 .zhongjian {
   width: 100%;
   background: #e1e1e1;
+}
+.right {
+  max-width: 420px;
 }
 .center {
   width: 90%;
@@ -57,5 +65,8 @@ export default {
   margin: 0 auto;
   padding-bottom: 5px;
   padding-top: 15px;
+}
+body {
+  margin: 0;
 }
 </style>

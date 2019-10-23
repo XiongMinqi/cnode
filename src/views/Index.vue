@@ -7,8 +7,13 @@
         </span>
       </div>
     </div>
-    <div class="time" @click="tiaozhuan()">
-      <div class="topic" v-for="(item, index) in title" :key="index">
+    <div class="time">
+      <div
+        class="topic"
+        v-for="item in title.slice(allpages*(nowpages-1),allpages*nowpages)"
+        :key="item.id"
+        @click="tiaozhuan(item)"
+      >
         <div class="zuobian">
           <div class="lf">
             <!--头像-->
@@ -38,19 +43,18 @@
         </div>
       </div>
     </div>
-    <div class="el__page__fen">
-      <el-pagination
-        @size-change="handleSizeChange()"
-        @current-change="handleCurrentChange"
-        :current-page="currentPage"
-        :page-sizes="[10, 20, 30, 40]"
-        :page-size="10"
-        layout="total,sizes,prev, pager, next,jumper"
-        :total="40"
-        class="page"
-      >
-      </el-pagination>
-    </div>
+
+    <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="currentPage"
+      :page-sizes="[10, 20, 30, 40]"
+      :page-size="40"
+      layout="total,sizes,prev, pager, next,jumper"
+      :total="40"
+      class="page"
+    >
+    </el-pagination>
   </div>
 </template>
 
@@ -62,8 +66,9 @@ export default {
   data() {
     return {
       num: 0,
-      pages: 0,
-      pagesNum: 0,
+      currentPage:1,
+      allpages: 40,
+      nowpages: 1,
       list: [
         { name: "全部" },
         { name: "精华" },
@@ -106,19 +111,19 @@ export default {
     },
     //翻页
     handleSizeChange(val) {
-      console.log("每页 ${val} 条");
-      this.pages = val;
+      // console.log("每页 ${val} 条");
+      this.allpages = val;
     },
     handleCurrentChange(val) {
-      console.log("当前页：${val} ");
-      this.pagesNum = val;
+      // console.log("当前页：${val} ");
+      this.nowpages = val;
     },
 
     changcolor(index) {
       this.num = index;
     },
-    tiaozhuan(){
-      this.$router.push("./shuju");
+    tiaozhuan(item) {
+      this.$router.push({ name: "shuju", query: { id: item.id } });
     }
   },
   mounted() {
@@ -138,21 +143,25 @@ export default {
   margin-right: 30px;
   margin-bottom: 35px;
 }
+.time {
+  width: 100%;
+}
 .title {
+  /*width: 1300px;*/
   display: flex;
   width: 100%;
   font-size: 14px;
   background: gray;
-  .name {
-    padding-right: 25px;
-    color: #80bd01;
-    height: 50px;
-    line-height: 50px;
-    font-size: 18px;
-    padding-left: 25px;
-    &:hover {
-      color: #08c;
-    }
+}
+.name {
+  padding-right: 25px;
+  color: #80bd01;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  padding-left: 25px;
+  &:hover {
+    color: #08c;
   }
 }
 .topic {

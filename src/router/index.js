@@ -3,14 +3,27 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Index from "../views/Index.vue";
 
-
-
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    redirect:"/index"
+    redirect: "/index"
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("../components/login/Login.vue")
+  },
+  {
+    path: "/loading",
+    name: "loading",
+    component: () => import("../loading/Loading.vue")
+  },
+  {
+    path: "/home",
+    name: "home",
+    component: () => import("../views/Home.vue")
   },
   {
     path: "/index",
@@ -18,7 +31,7 @@ const routes = [
     children: [
       {
         path: "",
-        name:"index",
+        name: "index",
         component: Index
       }
     ]
@@ -29,12 +42,11 @@ const routes = [
     children: [
       {
         path: "",
-        name:"shuju",
+        name: "shuju",
         component: () => import("../components/Shuju/Shuju.vue")
       }
     ]
-  },
-
+  }
 ];
 
 const router = new VueRouter({
